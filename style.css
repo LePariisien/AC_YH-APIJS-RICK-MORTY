@@ -26,10 +26,11 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  /* display: flex; */
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  display: grid;
 }
 
 h1 {
@@ -58,6 +59,9 @@ h1 {
 
 .card {
   padding: 2em;
+}
+.card p {
+  color:red;
 }
 
 .read-the-docs {
