@@ -1,9 +1,9 @@
-import ListPost from "../components/ListPost"
-import { getPostFromApi } from "../utils/Api"
+import ListPost from "../components/ListPost";
+import { getPostFromApi } from "../utils/Api";
 
 const ListOfPost = async (firstParam, secondParam) => {
-  const res = await getPostFromApi()
-  return ListPost(res)
-}
+  const res = await getPostFromApi();
+  return ListPost(res);
+};
 
-export default ListOfPost
+export default ListOfPost;
