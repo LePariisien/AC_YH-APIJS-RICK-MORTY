@@ -8,7 +8,7 @@ puis,
 
 On aura besoin aussi de Node.js:
 
-<p>brew install node<p>
+"brew install node"
 
 On poursuit avec une vérification de l'installation:
 
