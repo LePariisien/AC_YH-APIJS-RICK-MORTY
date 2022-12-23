@@ -89,8 +89,8 @@ header nav a:hover {
   box-shadow:  20px 20px 20px #d3d3d3cd,
   -20px -20px 60px #9adbdf;
   text-align: center;
-  width: 250px;
-  height: 200px;
+  width: 280px;
+  height: 230px;
   display: inline-grid;
   padding: 5px;
   overflow: hidden;
@@ -106,8 +106,8 @@ header nav a:hover {
 
 .card:hover {
     transition: 0.5s;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
 }
 
 .read-the-docs {
