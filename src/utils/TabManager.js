@@ -1,7 +1,8 @@
 class TabManager {
-  constructor(rootElement, componentMapping) {
+  constructor(rootElement, componentMapping, defaultTabId) {
     this.rootElement = rootElement;
     this.componentMapping = componentMapping;
+    this.defaultTabId = defaultTabId;
   }
 
   async openTabById(id) {
@@ -9,10 +10,12 @@ class TabManager {
       const {
         component,
         params: [...props],
+        button: button,
       } = this.componentMapping[id];
       const Component = await component(...props);
       this.rootElement.innerHTML = "";
-      this.rootElement.appendChild(Component);
+      this.rootElement.innerHTML = "";
+      this.rootElement.appendChild(Component, button);
     } else {
       console.error("Invalid id provided");
     }

@@ -24,13 +24,29 @@ const tabManager = new TabManager(rootElement, {
 document.querySelectorAll("[data-tabId]").forEach((element) => {
   element.addEventListener("click", () => {
     tabManager.openTabById(element.getAttribute("data-tabId"));
+    element.querySelector("button").addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log(event);
+      PointerEvent(event);
+      return ListOfID(event);
+    });
   });
 });
 
+// const ListCard = async () => {
+//   const res = await getIDFromApi();
+//   element.querySelector("button").innerHTML = "button";
+//   element.querySelector("button").addEventListener("click", (event) => {
+//     // console.log("click");
+//     event.preventDefault();
+
+//     return ListCard();
+//   });
+// };
 // ListCard.filter(function (element) {
 //   console.log(element);
 // });
-tabManager.openTabById("page1");
+tabManager.openTabById("page1", "page2", "page3");
 // document.querySelectorAll("[p]").forEach((element) => {
 //   element.addEventListener("click", () => {
 //     tabManager.openTabById(element.getAttribute("p"));
