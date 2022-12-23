@@ -1,6 +1,6 @@
 import createElement from "../utils/createElement";
 
-const Card = ({ text = "Bonjour", image, tagName = "div", button } = {}) =>
+const Card = ({ text = "Bonjour", image, tagName = "div", id} = {}) =>
   createElement({
     tagName,
     classList: ["card"],
@@ -8,7 +8,7 @@ const Card = ({ text = "Bonjour", image, tagName = "div", button } = {}) =>
       {
         tagName: "p",
         text,
-        button,
+        // button,
       },
       {
         tagName: "img",
@@ -18,20 +18,14 @@ const Card = ({ text = "Bonjour", image, tagName = "div", button } = {}) =>
             "https://rickandmortyapi.com/api/character/avatar/239.jpeg",
         },
       },
+      {
+        tagName: 'button',
+        text: text,
+        classList: ["button"],
+        attributes: {
+          id,
+        }
+      }
     ],
-    button: {
-      tagName: "button",
-      text: "button",
-      attributes: {
-        id: "button",
-      },
-    },
-    button: {
-      tagName: "button",
-      text: "button",
-      attributes: {
-        id: "button",
-      },
-    },
   });
 export default Card;

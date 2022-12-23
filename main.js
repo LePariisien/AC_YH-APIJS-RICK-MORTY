@@ -1,12 +1,12 @@
+import CharacterPage from "./src/pages/CharacterPage";
 import ListOfPost from "./src/pages/ListOfPost";
 import ListOfUser from "./src/pages/ListOfUser";
-import ListOfID from "./src/pages/ListOfID";
 import TabManager from "./src/utils/TabManager";
 import "./style.css";
 
 const rootElement = document.querySelector("#app");
 
-const tabManager = new TabManager(rootElement, {
+export const tabManager = new TabManager(rootElement, {
   page1: {
     component: ListOfUser,
     params: [1, "hello"],
@@ -15,21 +15,14 @@ const tabManager = new TabManager(rootElement, {
     component: ListOfPost,
     params: ["https://jsonplaceholder.typicode.com/posts"],
   },
-  page3: {
-    component: ListOfID,
-    params: ["https://rickandmortyapi.com/api/character/"],
-  },
+  characterPage: {
+    component: CharacterPage,
+  }
 });
 
 document.querySelectorAll("[data-tabId]").forEach((element) => {
   element.addEventListener("click", () => {
     tabManager.openTabById(element.getAttribute("data-tabId"));
-    element.querySelector("button").addEventListener("click", (event) => {
-      event.preventDefault();
-      console.log(event);
-      PointerEvent(event);
-      return ListOfID(event);
-    });
   });
 });
 

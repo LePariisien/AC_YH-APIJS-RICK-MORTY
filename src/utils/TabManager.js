@@ -5,17 +5,15 @@ class TabManager {
     this.defaultTabId = defaultTabId;
   }
 
-  async openTabById(id) {
+  async openTabById(id, params = []) {
     if (id in this.componentMapping) {
       const {
         component,
-        params: [...props],
-        button: button,
+        params: [...props] = [],
       } = this.componentMapping[id];
-      const Component = await component(...props);
+      const Component = await component(...( params.length ? params: props ));
       this.rootElement.innerHTML = "";
-      this.rootElement.innerHTML = "";
-      this.rootElement.appendChild(Component, button);
+      this.rootElement.appendChild(Component);
     } else {
       console.error("Invalid id provided");
     }

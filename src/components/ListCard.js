@@ -1,3 +1,4 @@
+import { tabManager } from "../../main";
 import Card from "./Card";
 
 export default function ListCard(arrayOfElement) {
@@ -5,15 +6,12 @@ export default function ListCard(arrayOfElement) {
   const element = template.content.cloneNode(true);
 
   arrayOfElement.forEach((e) => {
-    element.querySelector("div").appendChild(Card(e));
-    element.querySelector("div").appendChild(document.createElement("button"));
-    element.querySelector("button").innerHTML = "button";
-    element.querySelector("button").addEventListener("click", (event) => {
+    const card = Card(e)
+    element.querySelector("div").appendChild(card);
+    card.querySelector("button").addEventListener("click", (event) => {
       event.preventDefault();
-      console.log(event);
-      return ListCard();
+      tabManager.openTabById("characterPage", event.target.id);
     });
   });
-
   return element;
 }

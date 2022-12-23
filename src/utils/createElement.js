@@ -19,9 +19,6 @@ const createElement = ({ tagName, ...rest }) => {
     for (let e of createBulkElement(rest.children)) element.appendChild(e);
   }
 
-  if ("button" in rest) {
-    element.appendChild(createElement(rest.button));
-  }
 
   return element;
 };

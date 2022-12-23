@@ -8,7 +8,7 @@ const ListOfUser = async (firstParam, secondParam, treeParam) => {
   const data = res.results.map((element) => ({
     text: `${element.name} ${element.gender}`,
     image: element.image,
-    button: "button",
+    id: element.id,
   }));
 
   // const ListCard = async () => {
